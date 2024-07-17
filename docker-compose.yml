@@ -14,5 +14,9 @@ services:
       - "9100:9100"
   grafana:
     image: grafana/grafana:latest
+    volumes:
+      - ./grafana.ini:/etc/grafana/grafana.ini
+      - ./books.csv:/home/grafana/books.csv
+      - ./Placement_Data_Full_Class.csv:/home/grafana/Placement_Data_Full_Class.csv
     ports:
       - "3000:3000"
